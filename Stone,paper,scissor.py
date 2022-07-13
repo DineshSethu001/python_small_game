@@ -10,32 +10,38 @@
 #     -game rule
 
 import random
-def ComputerChoices():
-    ComputerChoices=["stone","paper","scissor"]
-    getComputerChoices=random.choice(ComputerChoices)
-    print(f"computer choice:{getComputerChoices}")
-    return getComputerChoices
-def userchoices():
-    userchoices=input("user Choice!:").lower()
-    return userchoices
+def computer():
+    computerChoice=["rock","paper","scissor"]
+    getComputerChoice=random.choice(computerChoice)
+    print(f"The computer choice is:{getComputerChoice}")
 
-def gameRule(PlayUser,PlayComputer):
-    #draw match
-    if PlayUser==PlayComputer:
-        print("match Draw")
-    #user wins
-    elif(PlayUser=="paper" and PlayComputer=="scissor"):
-        print("Computer wins")
-    elif(PlayUser=="scissor" and PlayComputer=="stone"):
-        print("Computer wins")
-    elif(PlayUser=="stone" and PlayComputer=="paper"):
-        print("Computer wins")
+    return getComputerChoice
+
+
+def user():
+    userChoice=input("Enter any from below one:\n 1.Rock\n 2.Paper\n 3.Scissor\n here:").lower()
+    return userChoice
+def gameRule(userchoice,sys_choice):
+    #draw
+    if userchoice==sys_choice:
+        print("Match Draw")
+  
+  
+    elif(userchoice=="scissor" and sys_choice=="paper"):
+        print("user wins")
    
-    elif(PlayUser=="paper" and PlayComputer=="stone"):
+    elif(userchoice=="stone" and sys_choice=="scissor"):
+        print("user Wins")
+    elif(userchoice=="rock" and sys_choice=="scissor"):
         print("user wins")
-    elif(PlayUser=="scissor" and PlayComputer=="paper"):
-        print("user wins")
-    elif(PlayUser=="stone" and PlayComputer=="scissor"):
-        print("user wins")
+
+    elif(userchoice=="rock" and sys_choice=="paper"):
+        print("system wins")
+   
+    elif(userchoice=="scissor" and sys_choice=="rock"):
+        print("system wins")
+    elif(userchoice=="paper" and sys_choice=="scissor"):
+        print("System wins")
     
-gameRule(PlayUser=userchoices(),PlayComputer=ComputerChoices())
+
+gameRule(userchoice=user(),sys_choice=computer())
