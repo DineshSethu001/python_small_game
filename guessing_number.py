@@ -15,8 +15,7 @@ while guess_taken<2:
 if sys_guess==sys_limit_num:
     guess_taken=str(guess_taken)
     print("Good job!"+name+"you are guessed my number in"+guess_taken+"guesses")
-if sys_guess!=sys_limit_num:
-    num=str(sys_limit_num)
+
 
 if sys_guess!=sys_limit_num:
     num=str(num)
